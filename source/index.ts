@@ -1,7 +1,7 @@
-import { base64url } from "rfc4648";
+import { encoding } from "bcrypto";
 
 export const encode = (content: string): string =>
-  base64url.stringify(Buffer.from(content));
+  encoding.base64.encodeURL(Buffer.from(content));
 
 export const decode = (content: string): Buffer =>
-  Buffer.from(base64url.parse(content));
+  encoding.base64.decodeURL(content);
